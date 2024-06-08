@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+    <div class="login-page d-flex flex-row justify-content-center w-100 vh-100 position-absolute top-0 start-0 ">
+
+        <div class="card  pt-5 mt-5 shadow-lg w-50">
+            <h1 class="text-center text-info">Smart Login System</h1>
+            <div class="form-content m-3">
+                <input type="email" class="form-control mb-3" placeholder="Enter your Email">
+                <input type="password" class="form-control mb-4" placeholder="Enter your Password">
+                <div class="show-warning-email text-center text-danger my-2 d-none">Wrong Email</div>
+                <div class="show-warning-password text-center text-danger my-2 d-none">Wrong Password</div>
+
+                <div id="signin-btn" class="btn btn-outline-info w-100 mb-2">Login</div>
+                <div class="signup-startup w-100 text-center pb-5 text-white">
+                    <span>Don’t have an account?</span> <span class="signup-a text-white">Sign Up</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <div class="signup-page d-flex flex-row justify-content-center w-100 vh-100 d-none">
+
+        <div class="card  pt-5 mt-5 shadow-lg w-50">
+            <h1 class="text-center text-info">Smart Login System</h1>
+            <div class="form-content m-3">
+                <input id="uernNme" type="text" class="form-control mb-3 is-invalid" id="exampleFormControlInput1"
+                    placeholder="Enter your name">
+                <div class="username-warning text-danger mb-2 d-none ">Name must be at least three character!</div>
+                <input id="userEmail" type="email" class="form-control mb-3 is-invalid" id="exampleFormControlInput1"
+                    placeholder="Enter your Email">
+                <div class="email-warning text-danger mb-2 d-none ">Email Must Contain [@,.,com]</div>
+
+                <input id="uerPassword" type="password" class="form-control mb-4 is-invalid" id="exampleFormControlInput1"
+                    placeholder="Enter your Password">
+                <div class="pass-warning text-danger mb-2 d-none ">Password Must be at least three numbers or characters</div>
+
+                <div class="show-created text-center text-success mb-2 d-none">Your Account has been Created
+                    succsufully!!</div>
+                <div class="show-warning text-center text-danger mb-2 d-none">This Email has been Created before!!</div>
+                <div id="signup-btn" class="btn btn-outline-info w-100 mb-2 disabled">Sign Up</div>
+                <div class="signin-startup w-100 text-center pb-5 text-white">
+                    <span>You have an account?</span> <span href="" class="signin-a text-white">Signin</span>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <div class="home-page d-flex flex-row justify-content-center w-100 vh-100 d-none">
+        <div class="pt-5 mt-5">
+            <h2>Welcome</h2>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
