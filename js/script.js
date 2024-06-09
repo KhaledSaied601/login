@@ -30,13 +30,13 @@ var usersEmail = [];
 var usersPassword = [];
 
 
-if (localStorage.getItem('homePage') == null) {
+if (localStorage.getItem('homeContent') == null) {
 
 }
 else {
     homePage.classList.remove('d-none')
     loginPage.classList.add('d-none')
-    homeContent.innerHTML = JSON.parse(localStorage.getItem('homePage'))
+    homeContent.innerHTML = localStorage.getItem('homeContent')
 }
 
 //Check UserList
@@ -49,12 +49,6 @@ else {
     //Push Emails to List
     usersList = JSON.parse(localStorage.getItem('userList'))
     explodeIntoLists()
-
-    console.log(usersName)
-    console.log(usersEmail)
-    console.log(usersPassword)
-
-
 }
 
 
@@ -169,13 +163,15 @@ signinButton.addEventListener('click', () => {
 //Logout
 logoutButton.addEventListener('click', () => {
 
+    //Clear Home Page Content
+    localStorage.removeItem('homeContent')
     //Hide home page
     homePage.classList.add('d-none')
     // show login Page 
     loginPage.classList.remove('d-none')
     //Clear All Inputs
     clear()
-    localStorage.removeItem('homePage')
+
 
 })
 
@@ -247,7 +243,7 @@ function addHomePage(index) {
         </div>`
 
 
-    localStorage.setItem('homePage', homeContent.innerHTML)
+    localStorage.setItem('homeContent', homeContent.innerHTML)
 
 }
 
