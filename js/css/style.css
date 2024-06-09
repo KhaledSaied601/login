@@ -1,0 +1,32 @@
+.login-page,.signup-page,.home-page {
+    background-color: #24353F;
+}
+
+.card {
+    height: fit-content;
+    background-color: #24353F;
+}
+
+.signup-a {
+    text-decoration: none;
+    cursor:pointer;
+}
+.signup-a:hover {
+    text-decoration:underline;
+}
+.signin-a {
+    text-decoration: none;
+    cursor:pointer;
+
+}
+.signin-a:hover {
+    text-decoration:underline;
+}
+input {
+    background-color: transparent !important;
+    color: white !important;
+    
+}
+input::placeholder {
+    color: white !important; /* Change this to the desired color */
+}
