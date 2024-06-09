@@ -11,6 +11,8 @@ var signupInputs = document.querySelectorAll('.signup-page input')
 
 //Home Page
 var homePage = document.querySelector('.home-page')
+var homeContent =document.querySelector('.home-content')
+var logoutButton = document.querySelector('.logout-btn')
 
 //Regex
 const signupRegex = {
@@ -27,6 +29,15 @@ var usersName = [];
 var usersEmail = [];
 var usersPassword = [];
 
+
+if (localStorage.getItem('homePage') == null) {
+
+}
+else {
+    homePage.classList.remove('d-none')
+    loginPage.classList.add('d-none')
+    homeContent.innerHTML = JSON.parse(localStorage.getItem('homePage'))
+}
 
 //Check UserList
 if (localStorage.getItem('userList') == null) {
@@ -143,6 +154,7 @@ signinButton.addEventListener('click', () => {
         else {
 
             addHomePage(index)
+
         }
     }
     else {
@@ -152,6 +164,22 @@ signinButton.addEventListener('click', () => {
 
 
 })
+
+
+//Logout
+logoutButton.addEventListener('click', () => {
+
+    //Hide home page
+    homePage.classList.add('d-none')
+    // show login Page 
+    loginPage.classList.remove('d-none')
+    //Clear All Inputs
+    clear()
+
+
+})
+
+
 
 
 
@@ -213,13 +241,12 @@ function addHomePage(index) {
     homePage.classList.remove('d-none')
     loginPage.classList.add('d-none')
 
-    homePage.innerHTML = `<div class="home-page d-flex flex-row justify-content-center w-100 vh-100 ">
-<div class="pt-5 mt-5">
+    homeContent.innerHTML = ` <div class="pt-5 mt-5">
+            <h2 class='text-white'>Welcome ${usersName[index]}</h2>
 
-    <h2>Welcome ${usersName[index]}</h2>
+        </div>`
 
-</div>
-</div>`
+    localStorage.setItem('homePage',JSON.stringify(homeContent.innerHTML))
 
 }
 
@@ -264,7 +291,7 @@ function isValidSignupInputs() {
 
 }
 
-function putInvalidInputs(){
+function putInvalidInputs() {
     document.querySelector('#signup-btn').classList.add('disabled')
     document.querySelector('#uernNme').classList.add('is-invalid')
     document.querySelector('#userEmail').classList.add('is-invalid')
