@@ -11,7 +11,7 @@ var signupInputs = document.querySelectorAll('.signup-page input')
 
 //Home Page
 var homePage = document.querySelector('.home-page')
-var homeContent =document.querySelector('.home-content')
+var homeContent = document.querySelector('.home-content')
 var logoutButton = document.querySelector('.logout-btn')
 
 //Regex
@@ -175,7 +175,7 @@ logoutButton.addEventListener('click', () => {
     loginPage.classList.remove('d-none')
     //Clear All Inputs
     clear()
-
+    localStorage.removeItem('homePage')
 
 })
 
@@ -246,7 +246,8 @@ function addHomePage(index) {
 
         </div>`
 
-    localStorage.setItem('homePage',JSON.stringify(homeContent.innerHTML))
+
+    localStorage.setItem('homePage', homeContent.innerHTML)
 
 }
 
@@ -299,3 +300,4 @@ function putInvalidInputs() {
 
 
 }
+
